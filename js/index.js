@@ -46,6 +46,7 @@ let middleImg = document.getElementById('middle-img');
 middleImg.src = "img/mid-page-accent.jpg";
 let title = document.querySelector('.cta-text h1');
 title.innerHTML = 'DOM<br>IS<br>AWESOME';
+title.style.color = '#012040';
 let button = document.querySelector('.cta-text button');
 button.textContent = 'Get Started';
 let copyright = document.querySelector('footer p');
@@ -76,6 +77,9 @@ mainHeaders[2].textContent = 'Services';
 mainHeaders[3].textContent = 'Product';
 mainHeaders[4].textContent = 'Vision';
 mainHeaders[5].textContent = 'Contact';
+let mainHeadersArray = Array.from(mainHeaders);
+mainHeadersArray.forEach(element => element.style.color = '#034384');
+mainHeadersArray.forEach(element => element.style.fontSize = '1.8rem');
 let mainParagraphs = document.getElementsByTagName('p');
 mainParagraphs[0].textContent = "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
 mainParagraphs[1].textContent = "About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
@@ -83,3 +87,4 @@ mainParagraphs[2].textContent = "Services content elementum magna eros, ac posue
 mainParagraphs[3].textContent = "Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
 mainParagraphs[4].textContent = "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
 mainParagraphs[5].innerHTML = "123 Way 456 Street<br>Somewhere, USA<br><br>1 (888) 888-8888<br><br>sales@greatidea.io"
+Array.from(mainParagraphs).forEach(element => element.style.color = '#ff00f5');
