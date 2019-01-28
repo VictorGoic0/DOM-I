@@ -44,13 +44,16 @@ let cta = document.getElementById('cta-img');
 cta.src = "img/header-img.png";
 let middleImg = document.getElementById('middle-img');
 middleImg.src = "img/mid-page-accent.jpg";
+
 let title = document.querySelector('.cta-text h1');
 title.innerHTML = 'DOM<br>IS<br>AWESOME';
 title.style.color = '#012040';
 let button = document.querySelector('.cta-text button');
 button.textContent = 'Get Started';
+
 let copyright = document.querySelector('footer p');
 copyright.textContent = "Copyright Great Idea! 2018";
+
 let anchor = document.querySelectorAll('header nav a');
 anchor[0].textContent = 'Services';
 anchor[1].textContent = 'Product';
@@ -59,6 +62,7 @@ anchor[3].textContent = 'Features';
 anchor[4].textContent = 'About';
 anchor[5].textContent = 'Contact';
 anchor.forEach(element => element.style.color = 'red');
+
 let navigation = document.querySelector('header nav');
 let newAnchor = document.createElement('a');
 newAnchor.textContent = 'Blog';
@@ -67,9 +71,10 @@ newAnchor.style.color = 'red';
 newAnchor.href = '#';
 let newAnchor2 = document.createElement('a');
 newAnchor2.textContent = 'Portfolio';
-navigation.append(newAnchor2);
+navigation.prepend(newAnchor2);
 newAnchor2.style.color = 'red';
 newAnchor2.href = '#';
+
 let mainHeaders = document.getElementsByTagName('h4');
 mainHeaders[0].textContent = 'Features';
 mainHeaders[1].textContent = 'About';
@@ -80,11 +85,12 @@ mainHeaders[5].textContent = 'Contact';
 let mainHeadersArray = Array.from(mainHeaders);
 mainHeadersArray.forEach(element => element.style.color = '#034384');
 mainHeadersArray.forEach(element => element.style.fontSize = '1.8rem');
+
 let mainParagraphs = document.getElementsByTagName('p');
-mainParagraphs[0].textContent = "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
-mainParagraphs[1].textContent = "About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
-mainParagraphs[2].textContent = "Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
-mainParagraphs[3].textContent = "Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
-mainParagraphs[4].textContent = "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
+mainParagraphs[0].textContent = siteContent["main-content"]["about-content"];
+mainParagraphs[1].textContent = siteContent["main-content"]["features-content"];
+mainParagraphs[2].textContent = siteContent["main-content"]["services-content"];
+mainParagraphs[3].textContent = siteContent["main-content"]["product-content"];
+mainParagraphs[4].textContent = siteContent["main-content"]["vision-content"];
 mainParagraphs[5].innerHTML = "123 Way 456 Street<br>Somewhere, USA<br><br>1 (888) 888-8888<br><br>sales@greatidea.io"
 Array.from(mainParagraphs).forEach(element => element.style.color = '#ff00f5');
