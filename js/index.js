@@ -38,23 +38,23 @@ const siteContent = {
 };
 
 // Example: Update the img src for the logo
-let logo = document.getElementById("logo-img");
+const logo = document.getElementById("logo-img");
 logo.src = "img/logo.png";
-let cta = document.getElementById('cta-img');
+const cta = document.getElementById('cta-img');
 cta.src = "img/header-img.png";
-let middleImg = document.getElementById('middle-img');
+const middleImg = document.getElementById('middle-img');
 middleImg.src = "img/mid-page-accent.jpg";
 
-let title = document.querySelector('.cta-text h1');
+const title = document.querySelector('.cta-text h1');
 title.innerHTML = 'DOM<br>IS<br>AWESOME';
 title.style.color = '#012040';
-let button = document.querySelector('.cta-text button');
+const button = document.querySelector('.cta-text button');
 button.textContent = 'Get Started';
 
-let copyright = document.querySelector('footer p');
+const copyright = document.querySelector('footer p');
 copyright.textContent = "Copyright Great Idea! 2018";
 
-let anchor = Array.from(document.getElementsByTagName('a'));
+const anchor = Array.from(document.getElementsByTagName('a'));
 anchor[0].textContent = 'Services';
 anchor[1].textContent = 'Product';
 anchor[2].textContent = 'Vision';
@@ -62,30 +62,36 @@ anchor[3].textContent = 'Features';
 anchor[4].textContent = 'About';
 anchor[5].textContent = 'Contact';
 
-let navigation = document.querySelector('header nav');
-let newAnchor = document.createElement('a');
-anchor.push(newAnchor);
-newAnchor.textContent = 'Blog';
-navigation.append(newAnchor);
-newAnchor.href = '#';
-let newAnchor2 = document.createElement('a');
+const navigation = document.querySelector('header nav');
+
+function anchorCreator(element, content) {
+  element = document.createElement('a');
+  element.textContent = content;
+  navigation.append(element);
+  element.href = '#';
+  anchor.push(element);
+  return element;
+}
+const newAnchor = anchorCreator('newAnchor', 'Blog')
+
+const newAnchor2 = document.createElement('a');
 anchor.push(newAnchor2);
 newAnchor2.textContent = 'Portfolio';
 navigation.prepend(newAnchor2);
 newAnchor2.href = '#';
 anchor.forEach(element => element.style.color = 'red')
-let mainHeaders = document.getElementsByTagName('h4');
+const mainHeaders = document.getElementsByTagName('h4');
 mainHeaders[0].textContent = 'Features';
 mainHeaders[1].textContent = 'About';
 mainHeaders[2].textContent = 'Services';
 mainHeaders[3].textContent = 'Product';
 mainHeaders[4].textContent = 'Vision';
 mainHeaders[5].textContent = 'Contact';
-let mainHeadersArray = Array.from(mainHeaders);
+const mainHeadersArray = Array.from(mainHeaders);
 mainHeadersArray.forEach(element => element.style.color = '#034384');
 mainHeadersArray.forEach(element => element.style.fontSize = '1.8rem');
 
-let mainParagraphs = document.getElementsByTagName('p');
+const mainParagraphs = document.getElementsByTagName('p');
 mainParagraphs[0].textContent = siteContent["main-content"]["about-content"];
 mainParagraphs[1].textContent = siteContent["main-content"]["features-content"];
 mainParagraphs[2].textContent = siteContent["main-content"]["services-content"];
