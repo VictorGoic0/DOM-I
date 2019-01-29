@@ -64,14 +64,14 @@ anchor[5].textContent = 'Contact';
 
 let navigation = document.querySelector('header nav');
 let newAnchor = document.createElement('a');
+anchor.push(newAnchor);
 newAnchor.textContent = 'Blog';
 navigation.append(newAnchor);
-newAnchor.style.color = 'red';
 newAnchor.href = '#';
 let newAnchor2 = document.createElement('a');
+anchor.push(newAnchor2);
 newAnchor2.textContent = 'Portfolio';
 navigation.prepend(newAnchor2);
-newAnchor2.style.color = 'red';
 newAnchor2.href = '#';
 anchor.forEach(element => element.style.color = 'red')
 let mainHeaders = document.getElementsByTagName('h4');
