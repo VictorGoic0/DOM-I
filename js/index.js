@@ -54,14 +54,13 @@ button.textContent = 'Get Started';
 let copyright = document.querySelector('footer p');
 copyright.textContent = "Copyright Great Idea! 2018";
 
-let anchor = document.querySelectorAll('header nav a');
+let anchor = Array.from(document.getElementsByTagName('a'));
 anchor[0].textContent = 'Services';
 anchor[1].textContent = 'Product';
 anchor[2].textContent = 'Vision';
 anchor[3].textContent = 'Features';
 anchor[4].textContent = 'About';
 anchor[5].textContent = 'Contact';
-anchor.forEach(element => element.style.color = 'red');
 
 let navigation = document.querySelector('header nav');
 let newAnchor = document.createElement('a');
@@ -74,7 +73,7 @@ newAnchor2.textContent = 'Portfolio';
 navigation.prepend(newAnchor2);
 newAnchor2.style.color = 'red';
 newAnchor2.href = '#';
-
+anchor.forEach(element => element.style.color = 'red')
 let mainHeaders = document.getElementsByTagName('h4');
 mainHeaders[0].textContent = 'Features';
 mainHeaders[1].textContent = 'About';
