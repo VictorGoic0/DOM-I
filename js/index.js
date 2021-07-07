@@ -38,5 +38,64 @@ const siteContent = {
 };
 
 // Example: Update the img src for the logo
-let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+const logo = document.getElementById("logo-img");
+logo.src = "img/logo.png";
+const cta = document.getElementById('cta-img');
+cta.src = "img/header-img.png";
+const middleImg = document.getElementById('middle-img');
+middleImg.src = "img/mid-page-accent.jpg";
+
+const title = document.querySelector('.cta-text h1');
+title.innerHTML = 'DOM<br>IS<br>AWESOME';
+title.style.color = '#012040';
+const button = document.querySelector('.cta-text button');
+button.textContent = 'Get Started';
+
+const copyright = document.querySelector('footer p');
+copyright.textContent = "Copyright Great Idea! 2018";
+
+const anchor = Array.from(document.getElementsByTagName('a'));
+anchor[0].textContent = 'Services';
+anchor[1].textContent = 'Product';
+anchor[2].textContent = 'Vision';
+anchor[3].textContent = 'Features';
+anchor[4].textContent = 'About';
+anchor[5].textContent = 'Contact';
+
+const navigation = document.querySelector('header nav');
+
+function anchorCreator(element, content) {
+  element = document.createElement('a');
+  element.textContent = content;
+  navigation.append(element);
+  element.href = '#';
+  anchor.push(element);
+  return element;
+}
+const newAnchor = anchorCreator('newAnchor', 'Blog')
+
+const newAnchor2 = document.createElement('a');
+anchor.push(newAnchor2);
+newAnchor2.textContent = 'Portfolio';
+navigation.prepend(newAnchor2);
+newAnchor2.href = '#';
+anchor.forEach(element => element.style.color = 'red')
+const mainHeaders = document.getElementsByTagName('h4');
+mainHeaders[0].textContent = 'Features';
+mainHeaders[1].textContent = 'About';
+mainHeaders[2].textContent = 'Services';
+mainHeaders[3].textContent = 'Product';
+mainHeaders[4].textContent = 'Vision';
+mainHeaders[5].textContent = 'Contact';
+const mainHeadersArray = Array.from(mainHeaders);
+mainHeadersArray.forEach(element => element.style.color = '#034384');
+mainHeadersArray.forEach(element => element.style.fontSize = '1.8rem');
+
+const mainParagraphs = document.getElementsByTagName('p');
+mainParagraphs[0].textContent = siteContent["main-content"]["about-content"];
+mainParagraphs[1].textContent = siteContent["main-content"]["features-content"];
+mainParagraphs[2].textContent = siteContent["main-content"]["services-content"];
+mainParagraphs[3].textContent = siteContent["main-content"]["product-content"];
+mainParagraphs[4].textContent = siteContent["main-content"]["vision-content"];
+mainParagraphs[5].innerHTML = "123 Way 456 Street<br>Somewhere, USA<br><br>1 (888) 888-8888<br><br>sales@greatidea.io"
+Array.from(mainParagraphs).forEach(element => element.style.color = '#ff00f5');
